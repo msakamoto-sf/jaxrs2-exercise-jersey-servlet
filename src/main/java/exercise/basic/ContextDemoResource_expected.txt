@@ -1,0 +1,68 @@
+Application#getClasses = [
+...
+]
+HttpHeaders = [
+  host:[
+    127.0.0.1:8580
+  ]
+(...)
+  cookie:[
+    c1=c1v;c2=c2va;c2=c2vb;c3=c3v
+  ]
+  x-custom-header-without-value:[
+
+  ]
+  x-custom-header1:[
+    hv1a
+    hv1b
+  ]
+  x-custom-header2:[
+    hv2
+  ]
+]
+HttpHeaders#getCookies() = [
+  c1=$Version=0;c1=c1v
+  c2=$Version=0;c2=c2vb
+  c3=$Version=0;c3=c3v
+]
+UriInfo:[
+AbsolutePath:'http://127.0.0.1:8580/myapp/ex1/context-demo/pp1a/pp1b/pp2a/pp2b/pp3'
+BaseUri:'http://127.0.0.1:8580/myapp/'
+RequestUri:'http://127.0.0.1:8580/myapp/ex1/context-demo/pp1a/pp1b/pp2a/pp2b/pp3?q1=q1va&q1=q1vb&q1=q1vc&q2=q2va&q2=q2vb&q3=q3v'
+QueryParameters:[
+  q2:[
+    q2va
+    q2vb
+  ]
+  q1:[
+    q1va
+    q1vb
+    q1vc
+  ]
+  q3:[
+    q3v
+  ]
+]
+PathParameters:[
+  pathparam2:[
+    pp2b
+    pp2a
+  ]
+  pathparam3:[
+    pp3
+  ]
+  pathparam1:[
+    pp1b
+    pp1a
+  ]
+]
+PathSegments:[
+  ex1
+  context-demo
+  pp1a
+  pp1b
+  pp2a
+  pp2b
+  pp3
+]
+]
