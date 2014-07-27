@@ -15,14 +15,22 @@
  */
 package exercise.basic;
 
+import java.io.IOException;
+import java.io.OutputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
+import javax.ws.rs.core.StreamingOutput;
+
+import com.google.common.io.ByteSource;
+import com.google.common.io.Resources;
 
 @Path("/ex1/typical-response-demo")
 public class ResponseDemoResource {
@@ -98,6 +106,26 @@ public class ResponseDemoResource {
                 .header("X-Custom1", "value1; value2, value3")
                 .header("X-Custom2", "")
                 .location(new URI("http://www.example.com/foo/bar")).build();
+    }
+
+    /**
+     * @return
+     */
+    @GET
+    @Path("sampleimage.png")
+    public Response anydata() {
+        URL resurl = Resources.getResource("exercise/sampleimage.png");
+        final ByteSource byteSource = Resources.asByteSource(resurl);
+        StreamingOutput stream = new StreamingOutput() {
+            @Override
+            public void write(OutputStream os) throws IOException,
+                    WebApplicationException {
+                byteSource.copyTo(os);
+                os.flush();
+            }
+        };
+        return Response.status(Status.OK).type("image/png").entity(stream)
+                .build();
     }
 
     /**

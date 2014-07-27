@@ -72,6 +72,7 @@ ResponseDemoResource<br>
 <a href="webapi/ex1/typical-response-demo/custom500" target="_blank">500</a>&nbsp;
 <a href="webapi/ex1/typical-response-demo/custom999" target="_blank">999</a><br>
 <a href="webapi/ex1/typical-response-demo/binarydl" target="_blank">binarydl</a>&nbsp;
+<a href="webapi/ex1/typical-response-demo/sampleimage.png" target="_blank">sampleimage.png</a>&nbsp;
 <a href="webapi/ex1/typical-response-demo/as_sjis" target="_blank">as_sjis</a>
 <hr>
 ResponseDemoResource<br>
@@ -92,6 +93,9 @@ ExceptionDemoResource<br>
 <a href="webapi/ex1/exception-demo/demo1" target="_blank">/demo1 (throws CustomNotFoundException)</a><br>
 <a href="webapi/ex1/exception-demo/demo2" target="_blank">/demo2 (throws CustomException)</a><br>
 <a href="webapi/ex1/exception-demo/demo3" target="_blank">/demo3 (throws CustomException2)</a><br>
+<hr>
+Servlet Features<br>
+<a href="webapi/ex1/servlet-feature-demo/demo1" target="_blank">/demo1 (dump ServletConfig and ServletContext major properties as JSON)</a><br>
 
 </body>
 </html>
