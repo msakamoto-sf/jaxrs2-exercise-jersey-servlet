@@ -82,6 +82,35 @@ name2to5(2 - 5 chars):<input type="text" name="name2to5" value="abc">&nbsp;
 <input type="submit" value="GET">
 </form>
 <hr>
+ListParametersDemoResource<br>
+<form action="webapi/ex1/list-parameter-demo" method="GET" target="_blank">
+<input type="hidden" name="list1" value="abc">
+<input type="hidden" name="list1" value="def">
+<input type="hidden" name="list1" value="ghi">
+<input type="hidden" name="list2[]" value="300">
+<input type="hidden" name="list2[]" value="100">
+<input type="hidden" name="list2[]" value="200">
+<input type="hidden" name="list3" value="jkl">
+<input type="hidden" name="list4[]" value="400">
+<input type="hidden" name="list4[]x" value="500">
+<input type="submit" value="GET">
+</form>
+<br>
+<form action="webapi/ex1/list-parameter-demo?list1=abc&list1=def&list1=ghi&list2[]=300&list2[]=100&list2[]=200" method="POST" target="_blank">
+<input type="hidden" name="list1" value="jkl">
+<input type="hidden" name="list2[]" value="400">
+<input type="hidden" name="list2[]x" value="500">
+<input type="hidden" name="list3" value="ABC">
+<input type="hidden" name="list3" value="DEF">
+<input type="hidden" name="list3" value="GHI">
+<input type="hidden" name="list4[]" value="30">
+<input type="hidden" name="list4[]" value="10">
+<input type="hidden" name="list4[]" value="20">
+<input type="hidden" name="list4[x]" value="40">
+<input type="hidden" name="list4[]x" value="50">
+<input type="submit" value="POST">
+</form>
+<hr>
 Lifecycle and Filter Demo<br>
 <a href="webapi/ex1/lifecycle-demo/sub1" target="_blank">/sub1 (NameBoundFilterA)</a><br>
 <a href="webapi/ex1/lifecycle-demo/sub2" target="_blank">/sub2 (NameBoundFilterB)</a><br>
