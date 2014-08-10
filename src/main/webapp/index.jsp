@@ -28,6 +28,33 @@ function call_RequestParametersDemoResource(method) {
         $("#restext").val(responseText);
     });
 };
+function call_JacksonDemoResource() {
+    $.ajax({
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        url: "webapi/ex1/jackson-demo?query1=abc&query2=def",
+        data: JSON.stringify({
+            "key1": "val1\r\nabc\t\"hello\".",
+            "key2": [100, 200, 300],
+            "key3": {
+                "k3_1": true,
+                "k3_2": ['abc', 'def', 'ghi'],
+                "k3_3": {},
+                "k3_4": [],
+                "k3_5": null,
+            },
+            "key4": [
+                {"id": 100, "name": "jon", "age": 10, "hobby": ["programming", "cooking"]},
+                {"id": 200, "name": "bob", "age": 20, "hobby": ["swimming"]},
+                {"id": 300, "name": "ben", "age": 30, "hobby": [null, true]}
+            ]
+            }),
+        dataType: "json",
+    }).done(function(responseText) {
+        var pretty = JSON.stringify(responseText, null, 2);
+        $("#restext").val(pretty);
+    });
+};
 </script>
 </head>
 <body>
@@ -133,6 +160,9 @@ MultipartFormDataParametersDemoResource<br>
 <input type="file" name="upfile[]" multiple="multiple"><br>
 <input type="submit" value="upload multiple files x 2 set">
 </form>
+<hr>
+JacksonDemoResource<br>
+<input type="button" value="call_JacksonDemoResource()" onclick="call_JacksonDemoResource();">
 <hr>
 Lifecycle and Filter Demo<br>
 <a href="webapi/ex1/lifecycle-demo/sub1" target="_blank">/sub1 (NameBoundFilterA)</a><br>
