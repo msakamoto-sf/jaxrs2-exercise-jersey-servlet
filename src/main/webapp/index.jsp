@@ -111,6 +111,29 @@ ListParametersDemoResource<br>
 <input type="submit" value="POST">
 </form>
 <hr>
+MultipartFormDataParametersDemoResource<br>
+<form action="webapi/ex1/multipart-form-data-demo/simple" method="POST" enctype="multipart/form-data" target="_blank">
+<input type="file" name="upfile">
+<input type="submit" value="upload single file">
+</form>
+<br>
+<form action="webapi/ex1/multipart-form-data-demo/multi?query1=100&query2=200" method="POST" enctype="multipart/form-data" target="_blank">
+<input type="text" name="textparam1" value="aaa">
+<input type="text" name="textparam2" value="bbb"><br>
+<input type="file" name="upfile[]"><br>
+<input type="file" name="upfile[]"><br>
+<input type="file" name="upfile[]"><br>
+<input type="submit" value="upload 3 files">
+</form>
+<br>
+<form action="webapi/ex1/multipart-form-data-demo/multi?query1=10&query2=20" method="POST" enctype="multipart/form-data" target="_blank">
+<input type="text" name="textparam1" value="abc">
+<input type="text" name="textparam2" value="def"><br>
+<input type="file" name="upfile[]" multiple="multiple"><br>
+<input type="file" name="upfile[]" multiple="multiple"><br>
+<input type="submit" value="upload multiple files x 2 set">
+</form>
+<hr>
 Lifecycle and Filter Demo<br>
 <a href="webapi/ex1/lifecycle-demo/sub1" target="_blank">/sub1 (NameBoundFilterA)</a><br>
 <a href="webapi/ex1/lifecycle-demo/sub2" target="_blank">/sub2 (NameBoundFilterB)</a><br>
