@@ -57,6 +57,11 @@
             <version>17.0</version>
         </dependency>
         <dependency>
+            <groupId>com.github.spullara.mustache.java</groupId>
+            <artifactId>compiler</artifactId>
+            <version>0.8.17</version>
+        </dependency>
+        <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
             <artifactId>jersey-container-servlet-core</artifactId>
             <!-- use the following artifactId if you don't need servlet 2.x compatibility -->
@@ -96,7 +101,7 @@
         </dependency>
     </dependencies>
     <properties>
-        <jersey.version>2.11</jersey.version>
+        <jersey.version>2.15</jersey.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 </project>
